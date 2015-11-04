@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">nwed</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="required">Required</string>
+    <string name="msg_error_network">No internet connection</string>
+    <string name="msg_error_generic">Search failed, try again</string>
+    <string name="show_prev">Show Prev</string>
+    <string name="show_next">Show Next</string>
+</resources>

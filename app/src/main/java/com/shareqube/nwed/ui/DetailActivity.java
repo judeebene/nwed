@@ -2,8 +2,10 @@ package com.shareqube.nwed.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +27,7 @@ public class DetailActivity   extends AppCompatActivity{
     private TextView author ;
     private TextView publisher ;
     private TextView description ;
+    private Toolbar toolbar ;
 
     NwedAdapter adapter ;
 
@@ -32,8 +35,10 @@ public class DetailActivity   extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().hide();
-        setContentView( R.layout.activity_book_detail);
+
+        setContentView(R.layout.activity_book_detail);
+        setSupportActionBar(toolbar);
+
         mBookPosition = getIntent().getIntExtra(BOOK_POSITION, 0);
 
         mBookDetails.setVolumeInfo((MainActivity.adapter.getNweds().get(mBookPosition).getVolumeInfo()));
@@ -51,9 +56,9 @@ public class DetailActivity   extends AppCompatActivity{
 
         // update the views
 
-        Log.e("Detail" ,mBookDetails.getVolumeInfo().authors.get(0));
+        Log.e("Detail" , "" +mBookDetails.getVolumeInfo().imageLinks.thumbnail);
 
-        Glide.with(getApplicationContext()).load(mBookDetails.getVolumeInfo().imageLinks)
+       Glide.with(getApplicationContext()).load(mBookDetails.getVolumeInfo().imageLinks.thumbnail)
                 .error(R.drawable.no_book_cover).into(coverNwed);
 
         titleNwed.setText(mBookDetails.getVolumeInfo().title);

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
@@ -38,9 +39,12 @@ import retrofit.Callback;
 
 public class MainActivity extends AppCompatActivity {
 
+
     String LOG_TAG = MainActivity.class.getSimpleName() ;
 
     RecyclerView rvBooks ;
+
+    Toolbar toolbar ;
 
 
     protected EditText mSearchEditText;
@@ -62,12 +66,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-
+        // Set a Toolbar to replace the ActionBar.
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         mSearchEditText = (EditText) findViewById(R.id.search_edit_text) ;
 
         mProgressBar = (ProgressBar)findViewById(R.id.progress_bar) ;
 
         searchButton  = (Button) findViewById(R.id.search_button);
+
+
 
         searchButton.setOnClickListener(new View.OnClickListener() {
             @Override

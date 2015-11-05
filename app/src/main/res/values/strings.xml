@@ -9,4 +9,5 @@
     <string name="msg_error_generic">Search failed, try again</string>
     <string name="show_prev">Show Prev</string>
     <string name="show_next">Show Next</string>
+    <string name="hello">Welcome to my app </string>
 </resources>
